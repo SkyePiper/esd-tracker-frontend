@@ -424,6 +424,9 @@ export const TrainingSessionPage = ({user, cookie, validPermissions, attendanceT
         attendanceText = "Attended"
       } else if (ValidateBitmask(itemAttendance?.user_attendance_type, [attendanceTypes["No Show"]])) {
         attendanceText = "No Show"
+      } else if (itemAttendance === undefined) {
+        attendanceText = "Not Attending"
+        updateAttendanceValue = attendanceTypes["Signed Up"]
       } else {
         attendanceText = "Not Attending"
       }
