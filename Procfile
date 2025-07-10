@@ -1,1 +1,1 @@
-web: yarn run build; yarn run dev --port $PORT
+web: yarn install; yarn run build; yarn run dev --port $PORT
