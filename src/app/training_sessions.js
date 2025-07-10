@@ -388,7 +388,7 @@ export const TrainingSessionPage = ({user, cookie, validPermissions, attendanceT
 
     setErrorMessage("")
 
-    const response = await UpdateTrainingSessionAttendanceRequest(cookie, sessionId, user.id, newAttendance)
+    const response = await UpdateTrainingSessionAttendanceRequest(cookie, sessionId, user.email, newAttendance)
 
     if (response?.status === 200) {
       setFetch(true)
