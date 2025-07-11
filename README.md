@@ -35,3 +35,5 @@ Hostname: `--hostname {hostname}`
 Port: `--port {port`
 
 You will then need to navigate to the correct host and port.
+
+If the backend URL is not default, you will need to change it in the [README.md](README.md)
