@@ -37,3 +37,19 @@ Port: `--port {port`
 You will then need to navigate to the correct host and port.
 
 If the backend URL is not default, you will need to change it in the [README.md](README.md)
+
+
+## Logins (Assignment only)
+
+Here are the default logins if this is coming for a assignment review:
+
+- admin@smithsdetection.com : Thisisareallysecurepassword
+- default.user@example.com : ExamplePassword
+- example.trainer@example.com : Trainer1
+- training.admin@example.com : TrainingAdmin1
+- trainer.nouser@example.com : NoUserForYou!
+- update.self@example.com : ICanUpdateMyOwnUserData!
+- update.others@example.com : ICanUpdateOtherUsers!
+- luke.johnson@smithsdetection.com : WithANameLikeLukeJohnson!
+- kieran.james.piper@example.com : Hey!Who'sDeadNamingMe?
+- useless.user@example.com : Well,ThisGuyCanDoALot...
