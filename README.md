@@ -10,12 +10,15 @@ yarn install
 
 ## Running
 
-First, run the development server:
+Development:
 
 ```bash
 # For development build
 yarn run dev
 ```
+
+Production
+
 ```bash
 # For production build
 yarn run build
@@ -24,3 +27,11 @@ yarn run start
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+
+Note that you can change the hostname and port by supply the relevant flags:
+
+Hostname: `--hostname {hostname}`
+
+Port: `--port {port`
+
+You will then need to navigate to the correct host and port.
