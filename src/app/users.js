@@ -55,6 +55,8 @@ const AddUserPopup = ({validPermissions, cookie, onClose, setErrorMessage}) => {
       onClose()
     } else if (response?.message) {
       setErrorMessage(response.message)
+    } else if (response?.detail) {
+      setErrorMessage(response.detail)
     } else {
       setErrorMessage("Unable to add new user")
     }
@@ -176,6 +178,8 @@ const EditUserPopup = ({userToEdit, validPermissions, cookie, onClose, setErrorM
       onClose()
     } else if (response?.message) {
       setErrorMessage(response.message)
+    } else if (response?.detail) {
+      setErrorMessage(response.detail)
     } else {
       setErrorMessage("Unable to update user")
     }
@@ -261,6 +265,8 @@ const DeleteUserPopup = ({selectedUser, cookie, onClose, setErrorMessage}) => {
       onClose()
     } else if (response?.message) {
       setErrorMessage(response.message)
+    } else if (response?.detail) {
+      setErrorMessage(response.detail)
     } else {
       setErrorMessage("Unable to delete user")
     }

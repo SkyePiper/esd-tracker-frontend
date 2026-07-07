@@ -44,6 +44,8 @@ const AddTrainingSessionPopup = ({cookie, onClose, setErrorMessage}) => {
       onClose()
     } else if (response?.message) {
       setErrorMessage(response.message)
+    } else if (response?.detail) {
+      setErrorMessage(response.detail)
     } else {
       setErrorMessage("Unable to add training session")
     }
@@ -270,6 +272,8 @@ const DeleteTrainingSessionPopup = ({session, cookie, onClose, setErrorMessage})
       onClose()
     } else if (response?.message) {
       setErrorMessage(response.message)
+    } else if (response?.detail) {
+      setErrorMessage(response.detail)
     } else {
       setErrorMessage("Unable to delete training session")
     }
