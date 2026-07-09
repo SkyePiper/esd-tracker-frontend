@@ -42,12 +42,12 @@ jobs:
     - name: Build Production Frontend
       run: yarn run build
 
-    - name: Next for files
+    - name: List Generated Files
       run: ls .next
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: frontend-build
-        path: ./.next/
+        path: .\\.next
         if-no-files-found: error
