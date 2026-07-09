@@ -42,15 +42,9 @@ jobs:
     - name: Build Production Frontend
       run: yarn run build
 
-    - name: List subfolders
-      id: list-subfolders
-      uses: Drafteame/list-folders-action@main
-      with:
-        paths: .
-
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: frontend-build
-        path: ./.next/
+        path: /home/runner/work/esd-tracker-frontend/esd-tracker-frontend/.next
         if-no-files-found: error
