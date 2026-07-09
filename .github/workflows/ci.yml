@@ -34,7 +34,7 @@ jobs:
       run: yarn install --check-files
 
     - name: Lint
-      run: yarn run lint
+      run: yarn eslint .
 
 #    - name: Unit Tests
 #      run: yarn run test
@@ -43,11 +43,11 @@ jobs:
       run: yarn run build
 
     - name: Print Dir
-      run: ls
+      run: ls -a
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: frontend-build
-        path: /home/runner/work/esd-tracker-frontend/esd-tracker-frontend/.next
+        path: .next/
         if-no-files-found: error
