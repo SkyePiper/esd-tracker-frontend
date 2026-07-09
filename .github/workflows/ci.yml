@@ -1,0 +1,54 @@
+name: ci
+
+on:
+  push:
+
+  pull_request:
+
+jobs:
+  testing:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: [3.12]
+
+    env:
+      BACKEND_URL: "http://127:0:0: 1:8000/"
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+    - uses: actions/setup-node@v2
+      with:
+        node-version: "25.4.X"
+
+    - name: Install Yarn
+      uses: borales/actions-yarn@v4
+      with:
+        cmd: install # will run `yarn install` command
+
+    - name: Install dependencies
+      run: yarn install --check-files
+
+    - name: Lint
+      run: yarn eslint .
+
+#    - name: Unit Tests
+#      run: yarn run test
+
+    - name: Build Production Frontend
+      run: yarn run build
+
+    - name: List Generated Files
+      run: ls .next
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: frontend-build
+        include-hidden-files: true
+        path: .next
+        if-no-files-found: error
