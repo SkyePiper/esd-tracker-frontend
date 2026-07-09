@@ -1,0 +1,45 @@
+name: ci
+
+on:
+  push:
+
+  pull_request:
+
+jobs:
+  testing:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: [3.12]
+
+    env:
+      BACKEND_URL: "http://127:0:0: 1:8000/"
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+    - uses: actions/setup-node@v2
+      with:
+        node-version: "25.4.X"
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Lint
+      run: npm lint
+
+    - name: Unit Tests
+      run: npm test
+
+    - name: Build Production Frontend
+      run: npm run build
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: frontend-build
+        path: frontend/build
+        if-no-files-found: error
