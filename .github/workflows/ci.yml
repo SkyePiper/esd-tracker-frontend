@@ -41,3 +41,10 @@ jobs:
 
     - name: Build Production Frontend
       run: yarn run build
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: frontend-build
+        path: .next
+        if-no-files-found: error
