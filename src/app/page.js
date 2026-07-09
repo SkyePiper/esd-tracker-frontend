@@ -9,7 +9,6 @@ import {UsersPage} from "@/app/users";
 import {Button} from "@/common/components/buttons";
 import {ButtonTypes} from "@/common/constants/button_types";
 import Cookies from "universal-cookie";
-import ValidatePermissions from "@/common/validatePermissions";
 import {TrainingSessionPage} from "@/app/training_sessions";
 
 const cookies = new Cookies()
