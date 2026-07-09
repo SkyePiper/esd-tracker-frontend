@@ -31,7 +31,7 @@ jobs:
         cmd: install # will run `yarn install` command
 
     - name: Install dependencies
-      run: yarn install
+      run: yarn install --check-files
 
     - name: Lint
       run: yarn run lint
